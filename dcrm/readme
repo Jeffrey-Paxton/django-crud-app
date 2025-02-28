@@ -53,3 +53,5 @@ Security Layers Implemented
 🔹 Added Session Timeout which logs out the user after 20 mins .
 
 With these layers in place, the app is safer and more resilient against common security threats while keeping things simple for users
+
+@GitHub Link - https://github.com/Kixbain/django-crud-app/tree/main/dcrm
