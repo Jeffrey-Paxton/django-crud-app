@@ -8,7 +8,7 @@ INSTALLAION STEPS :
 1. Clone the Repository
    First, download the project files by cloning the repository (or just download the ZIP file).
 
-   git clone <your-repository-url>
+   git clone https://github.com/Kixbain/django-crud-app
    cd <your-project-folder>
 
 2.Set Up a Virtual Environment (is used to install dependencies/packages without any conflicts)
