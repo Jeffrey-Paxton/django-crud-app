@@ -1,0 +1,55 @@
+PROJECT (CRUD application) : 
+
+This project is a **full-fledged Django-based CRUD application** designed to efficiently manage customer records with a secure and user-friendly interface. It allows users to **create, read, update, and delete** records while ensuring proper authentication and data integrity. The application is built with Django’s powerful ORM, enabling smooth interaction with a **PostgreSQL database**, ensuring scalability and security. The project is set up with **a well-structured environment**, making it easy to install and deploy. I have configured the **PostgreSQL connection string** to enable seamless database integration, allowing efficient data storage and retrieval.  
+Additionally, the application is designed with **aesthetic UI elements**, ensuring an intuitive user experience. The frontend is structured to provide **clear navigation, responsive layouts, and interactive forms**, improving usability. Security measures such as **CSRF protection, authentication, and secure password handling** have been implemented to safeguard user data. The project setup includes **server configuration, environment management, and necessary dependencies**, ensuring a smooth workflow from installation to execution. By leveraging Django’s built-in features and best practices, this project not only functions efficiently but also follows a **clean and maintainable code structure**. With my skills in **project setup, database integration, ORM usage, and UI design**, I have successfully built and deployed a fully operational application that is both functional and secure.
+
+INSTALLAION STEPS :
+
+1. Clone the Repository
+   First, download the project files by cloning the repository (or just download the ZIP file).
+
+   git clone <your-repository-url>
+   cd <your-project-folder>
+
+2.Set Up a Virtual Environment (is used to install dependencies/packages without any conflicts)
+  paste this in cmd/powershell - python -m venv venv
+  to activae venv use - venv\Scripts\activate(for windows), source venv/bin/activate(for Mac)
+
+3.Install Dependencies : use - pip install -r requirements.txt
+
+4.Configure Database : make sure PostgreSQL is installed and Update these lines from the settings file
+
+  DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'your_database_name',
+        'USER': 'your_database_user',
+        'PASSWORD': 'your_database_password',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+  }
+
+5. Apply Migrations : 
+   use - python manage.py makemigrations 
+   use - python manage.py migrate
+
+6.Create a Superuser : This is optional but handy
+  use - python manage.py createsuperuser
+  set name and password
+
+7.Run Server : use - python manage.py runserver
+  Now, open your browser and go to:
+  http://127.0.0.1:8000/ – Main Application
+  http://127.0.0.1:8000/admin/ – Django Admin Panel (login with the superuser account)
+
+Security Layers Implemented
+🔹 CSRF Protection - Added {% csrf_token %} in forms to prevent unauthorized actions from external sites.
+🔹 User Authentication - Used Django’s built-in login system to ensure only registered users can access or modify records.
+🔹 SQL Injection Prevention - Used Django ORM instead of raw SQL to keep the database safe from injection attacks.
+🔹 XSS Protection - Django automatically escapes user input in templates to prevent malicious scripts from running.
+🔹 Clickjacking Protection - Set X_FRAME_OPTIONS = 'DENY' to stop the site from being embedded in iframes, preventing UI-based attacks.
+🔹 Secure Password Handling - Django securely hashes passwords, ensuring they are never stored in plain text.
+🔹 Added Session Timeout which logs out the user after 20 mins .
+
+With these layers in place, the app is safer and more resilient against common security threats while keeping things simple for users

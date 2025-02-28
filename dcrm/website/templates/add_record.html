@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .buttons{
+        display: flex;
+    }
+    button{
+        margin-right: 20px;
+    }
+</style>
+<div class="col-md-6 offset-md-3">
+
+<h1> Add Record</h1><br>
+
+
+
+<form method="post" action="{% url 'add_record' %}">
+    {% csrf_token %}
+    {% if user.is_authenticated %}
+    {{ form.as_p}}
+    {% endif%}
+    <div  class="buttons" style="display: flex; align-items: center;">
+    <button type="submit" class="btn btn-primary" >Add Record</button>
+    <a class="btn btn-secondary" href="{% url 'home' %}">Back</a>
+</div>
+</form>
+
+<!-- <button type="submit" class="btn btn-secondary" action="{% url 'home'%}" style="margin-bottom: 50px;">Back</button> -->
+
+{% endblock %}
